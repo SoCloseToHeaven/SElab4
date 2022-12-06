@@ -73,6 +73,7 @@ abstract public class Plane implements Describable, Movable {
 
         public Baggage(String description) {
             this.description = description;
+            System.out.println("Загрузили в самолёт следущий багаж: " + this.describe());
             baggage = this;
         }
         @Override

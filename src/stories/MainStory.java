@@ -54,7 +54,6 @@ public class MainStory {
 
     public static void start() {
         System.out.println("4-е января:");
-        // ))))))))))))))))))
         for (ApproximateTime iterator : ApproximateTime.values()) {
             System.out.println(iterator.describe());
             switch (iterator) {
@@ -88,7 +87,6 @@ public class MainStory {
                             .asList(dayer, denfort, mctay, sherman, goonarson, larsen)
                             .forEach(person -> person.setAction(Action.PREPARING_FOR_FLIGHT));
                     Plane.Baggage baggage = fifth.new Baggage("сани, собаки, тяжелое машинное оборудование");
-                    System.out.println("Загрузили в самолёт следущий багаж: " + baggage.describe());
                 }
                 case EIGHT_PM -> {
                     Arrays.asList(sherman, goonarson, larsen).forEach(person -> fifth.addPassenger(person));
@@ -100,6 +98,7 @@ public class MainStory {
         }
         System.out.println("5-е января:");
         https://google.com
+        // ))))))))))))))))))
         for (ApproximateTime iterator : ApproximateTime.values()) {
             System.out.println(iterator.describe());
             switch (iterator) {
