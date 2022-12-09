@@ -6,6 +6,7 @@ import locations.Location;
 import planes.Plane;
 
 import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.regex.Pattern;
 
@@ -56,18 +57,14 @@ public final class Validation {
                 privatePassengers = planeClass.getDeclaredField("passengers");
                 privateInFlight = planeClass.getDeclaredField("inFlight");
                 privateLocation = planeClass.getDeclaredField("location");
-                privatePassengers.setAccessible(true);
-                privateInFlight.setAccessible(true);
-                privateLocation.setAccessible(true);
+                Arrays.asList(privatePassengers, privateInFlight, privateLocation).forEach(field -> field.setAccessible(true));
                 passengers = (HashSet<Person>) privatePassengers.get(plane);
                 inFlight = (boolean) privateInFlight.get(plane);
                 location = (Location) privateLocation.get(plane);
                 if ((passengers.size() == 0) || (location.equals(flightDestination)) || inFlight)
                     throw new InvalidFlightConditionsException();
             }
-            catch (NoSuchFieldException exception) {}
-            catch (IllegalAccessException exception) {}
-            catch (NullPointerException exception) {}
+            catch (NoSuchFieldException | IllegalAccessException | NullPointerException exception) {}
         }
     }
 

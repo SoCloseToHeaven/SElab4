@@ -129,6 +129,7 @@ public class MainStory {
                 case ZERO_PM -> {
                     lakesCamp.setWeather(Weather.FOGGY);
                     System.out.println(dayer.getName() + " в возрасте " + dayer.getAge() + " лет потерял мир и покой");
+                    System.out.println("\n");
                     break https;
                 }
             }
